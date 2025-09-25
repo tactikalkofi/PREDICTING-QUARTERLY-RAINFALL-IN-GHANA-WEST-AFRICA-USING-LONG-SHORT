@@ -158,7 +158,7 @@ class GhanaRainfallPredictor:
         model = self.build_lstm_model((X_train.shape[1], 1))
         
         with st.spinner("Training LSTM model..."):
-            model.fit(X_train, y_train, epochs=50, batch_size=32, verbose=0, validation_split=0.2)
+            model.fit(X_train, y_train, epochs=1000, batch_size=64, verbose=0, validation_split=0.2)
         
         # Make predictions
         predictions = model.predict(X_test)
